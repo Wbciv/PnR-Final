@@ -107,7 +107,7 @@ class GoPiggy(pigo.Pigo):
             self.encR(18)
             self.encF(5)
             self.encR(30)
-            self.restore_heading()
+        self.restore_heading()
 
     ########################
     ### MAIN LOGIC LOOP - the core algorithm of my navigation
