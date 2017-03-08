@@ -129,7 +129,8 @@ class GoPiggy(pigo.Pigo):
         pigo.Pigo.encL(self, enc)
         self.turn_track -= enc
 
-######## Final Start up #######
+    ######## Final Start up #######
+
         if self.is_clear():
             self.cruise() #### need to creat! ######
         answer = self.choose_path()
@@ -143,7 +144,7 @@ class GoPiggy(pigo.Pigo):
         while self.is_clear():
             time.sleep(.1)
         self.stop()
-        Self.encB(2)
+        self.encB(2)
 
 
 
