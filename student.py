@@ -107,7 +107,7 @@ class GoPiggy(pigo.Pigo):
             self.encR(18)
             self.encF(5)
             self.encR(30)
-        self.restore_heading()
+            self.restore_heading()
 
     ########################
     ### MAIN LOGIC LOOP - the core algorithm of my navigation
@@ -140,7 +140,7 @@ class GoPiggy(pigo.Pigo):
 
     def cruise(self):
         self.fwd()#####need to add to pigo?
-        while self.is_clear()
+        while self.is_clear():
             time.sleep(.1)
         self.stop()
         Self.encB(2)
