@@ -95,17 +95,17 @@ class GoPiggy(pigo.Pigo):
     def dance(self):
         print("Piggy dance")
         ##### WRITE YOUR FIRST PROJECT HERE
-        self.help
+        self.help()
 
     def help(self):
         print("help")
-        for x in range(2)
+        for x in range(2):
         self.encF(10)
         self.encB(12)
         self.encR(6)
         self.encL(12)
         self.encR(18)
-        self.encF(5)
+        self.encF(6)
         self.encR(30)
         self.restore_heading()
 
