@@ -97,18 +97,17 @@ class GoPiggy(pigo.Pigo):
         ##### WRITE YOUR FIRST PROJECT HERE
         self.help()
 
-
     def help(self):
         print("help")
         for x in range(2):
-        self.encF(10)
-        self.encB(12)
-        self.encR(6)
-        self.encL(12)
-        self.encR(18)
-        self.encF(6)
-        self.encR(30)
-        self.restore_heading()
+            self.encF(10)
+            self.encB(12)
+            self.encR(6)
+            self.encL(12)
+            self.encR(18)
+            self.encF(6)
+            self.encR(30)
+            self.restore_heading()
 
     ########################
     ### MAIN LOGIC LOOP - the core algorithm of my navigation
