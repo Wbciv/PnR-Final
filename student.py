@@ -94,8 +94,8 @@ class GoPiggy(pigo.Pigo):
     #YOU DECIDE: How does your GoPiggy dance?
     def dance(self):
         print("Piggy dance")
-        ##### WRITE YOUR FIRST PROJECT HERE
         self.help()
+        return
 
     def help(self):
         print("help")
@@ -163,4 +163,9 @@ def quit():
 ##################################################################
 ######## The app starts right here when we instantiate our GoPiggy
 
-g = GoPiggy()
+try:
+    g = GoPiggy()
+except (KeyboardInterrupt, SystemExit):
+    from gopigo import *
+    stop()
+
