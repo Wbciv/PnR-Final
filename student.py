@@ -48,7 +48,7 @@ class GoPiggy(pigo.Pigo):
         menu = {"n": ("Navigate forward", self.nav),
                 "d": ("Dance", self.dance),
                 "c": ("Calibrate", self.calibrate),
-                "w": ("Sweep", self.sweep),
+                "t": ("Turn test", self.turn_test),
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit)
                 }
@@ -67,11 +67,47 @@ class GoPiggy(pigo.Pigo):
                     print("AAAHHHHH")
                     break
 
+    ###########Turn Test########
+
+    def turn_test(self):
+        while True:
+            ans = raw_input('Turn right, left or stop? (r/l/s): ')
+            if ans == 'r':
+                val = int(raw_input('/nBy how much?: '))
+                self.encR(val)
+            elif ans == 'l':
+                val = int(raw_input('/nBy how much?: '))
+                self.encL(val)
+            else:
+                break
+        self.restore_heading()
+
+    def restore_heading(self):
+        print("Now I'll turn back to the starting postion.")
+        if self.turn_track > 0:
+            val = abs(self.turn_track)
+            self.encL(val)
+        elif self.turn_track <0:
+            val = abs(self.turn_track)
+            self.encR(val)
+
     #YOU DECIDE: How does your GoPiggy dance?
     def dance(self):
         print("Piggy dance")
         ##### WRITE YOUR FIRST PROJECT HERE
+        self.help
 
+    def help(self):
+        print("help")
+        for x in range(2)
+        self.encF(10)
+        self.encB(12)
+        self.encR(6)
+        self.encL(12)
+        self.encR(18)
+        self.encF(5)
+        self.encR(30)
+        self.restore_heading()
 
     ########################
     ### MAIN LOGIC LOOP - the core algorithm of my navigation
@@ -83,6 +119,32 @@ class GoPiggy(pigo.Pigo):
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         # this is the loop part of the "main logic loop"
+
+    def encR(self, enc):
+        pigo.Pigo.encR(self,enc)
+        self.turn_track += enc
+
+
+    def encL(self, enc):
+        pigo.Pigo.encL(self, enc)
+        self.turn_track -= enc
+
+######## Final Start up #######
+        if self.is_clear():
+            self.cruise() #### need to creat! ######
+        answer = self.choose_path()
+        if answer == "left":
+            self.encL(6)
+        elif answer == "right":
+            self.encR(6)
+
+    def cruise(self):
+        self.fwd()#####need to add to pigo?
+        while self.is_clear()
+            time.sleep(.1)
+        self.stop()
+        Self.encB(2)
+
 
 
 

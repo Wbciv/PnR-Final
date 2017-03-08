@@ -98,6 +98,10 @@ class Pigo(object):
         fwd()
         time.sleep(1 * (enc / 18)+.4)
 
+    def fwd(self):
+        fwd()
+
+
     def encR(self, enc):
         print('Moving '+str((enc/18))+' rotation(s) right')
         enc_tgt(1, 1, enc)
