@@ -105,7 +105,7 @@ class GoPiggy(pigo.Pigo):
             self.encR(6)
             self.encL(12)
             self.encR(18)
-            self.encF(6)
+            self.encF(5)
             self.encR(30)
             self.restore_heading()
 
