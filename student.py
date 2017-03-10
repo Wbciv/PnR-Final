@@ -96,6 +96,7 @@ class GoPiggy(pigo.Pigo):
         print("Piggy dance")
         self.help()
 
+
     def help(self):
         print("help")
         for x in range(2):
@@ -151,12 +152,12 @@ class GoPiggy(pigo.Pigo):
 ####################################################
 ############### STATIC FUNCTIONS
 
-    def error():
-        print('Error in input')
+def error():
+    print('Error in input')
 
 
-    def quit():
-        raise SystemExit
+def quit():
+    raise SystemExit
 
 ##################################################################
 ######## The app starts right here when we instantiate our GoPiggy
