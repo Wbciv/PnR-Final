@@ -119,13 +119,15 @@ class GoPiggy(pigo.Pigo):
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         # this is the loop part of the "main logic loop"
-        if self.is_clear():
-            self.cruise() #### need to creat! ######
-        answer = self.choose_path()
-        if answer == "left":
-            self.encL(6)
-        elif answer == "right":
-            self.encR(6)
+        while True:
+            if self.is_clear():
+                self.cruise()
+            #### need to creat! ######
+            answer = self.choose_path()
+            if answer == "left":
+                self.encL(6)
+            elif answer == "right":
+                self.encR(6)
 
 
     def encR(self, enc):
