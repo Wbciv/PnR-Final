@@ -125,9 +125,9 @@ class GoPiggy(pigo.Pigo):
             #### need to creat! ######
             answer = self.choose_path()
             if answer == "left":
-                self.encL(12)
+                self.encL(8)
             elif answer == "right":
-                self.encR(12)
+                self.encR(8)
 
 
     def encR(self, enc):
