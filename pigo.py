@@ -17,11 +17,11 @@ class Pigo(object):
     def __init__(self):
 
         self.MIDPOINT = 90
-        self.STOP_DIST = 30
+        self.STOP_DIST = 40
         self.RIGHT_SPEED = 200
         self.LEFT_SPEED = 200
         self.scan = [None] * 180
-
+        self.
         # this makes sure the parent handler doesn't take over student's
         if __name__ == "__main__":
             print('-----------------------')

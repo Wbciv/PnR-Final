@@ -20,9 +20,9 @@ class GoPiggy(pigo.Pigo):
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
         self.STOP_DIST = 4
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.LEFT_SPEED = 142
+        self.LEFT_SPEED = 102
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.RIGHT_SPEED = 140
+        self.RIGHT_SPEED = 100
         # This one isn't capitalized because it changes during runtime, the others don't
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
@@ -61,7 +61,7 @@ class GoPiggy(pigo.Pigo):
         menu.get(ans, [None, error])[1]()
 
     def sweep(self):
-        for x in range (19,160,1):
+        for x in range (20,160,2):
                 self.servo(x)
                 if self.dist() < 50:
                     print("AAAHHHHH")
@@ -125,9 +125,9 @@ class GoPiggy(pigo.Pigo):
             #### need to creat! ######
             answer = self.choose_path()
             if answer == "left":
-                self.encL(10)
+                self.encL(5)
             elif answer == "right":
-                self.encR(10)
+                self.encR(5)
             self.restore_heading()
 
     def encR(self, enc):
