@@ -17,7 +17,7 @@ class Pigo(object):
     def __init__(self):
 
         self.MIDPOINT = 90
-        self.STOP_DIST = 40
+        self.STOP_DIST = 50
         self.RIGHT_SPEED = 200
         self.LEFT_SPEED = 200
         self.scan = [None] * 180
@@ -132,7 +132,7 @@ class Pigo(object):
 
     def dist(self):
         measurement = us_dist(15)
-        time.sleep(.05)
+        time.sleep(.03)
         print('I see something ' + str(measurement) + "cm away")
         return measurement
 

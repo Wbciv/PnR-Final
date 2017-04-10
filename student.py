@@ -18,7 +18,7 @@ class GoPiggy(pigo.Pigo):
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
         self.MIDPOINT = 90
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
-        self.STOP_DIST = 40
+        self.STOP_DIST = 50
         # YOU DECIDE: What left motor power helps straighten your fwd()?
         self.LEFT_SPEED = 122
         # YOU DECIDE: What left motor power helps straighten your fwd()?
@@ -125,9 +125,9 @@ class GoPiggy(pigo.Pigo):
             #### need to creat! ######
             answer = self.choose_path()
             if answer == "left":
-                self.encL(5)
+                self.encL(8)
             elif answer == "right":
-                self.encR(5)
+                self.encR(8)
             self.restore_heading()
 
     def encR(self, enc):
@@ -142,10 +142,10 @@ class GoPiggy(pigo.Pigo):
     ######## Final Start up ###
     def cruise(self):
         self.fwd()#####need to add to pigo?
-        while self.is_clear():
+        while self.dist()> self.STOP_DIST:
             time.sleep(.1)
         self.stop()
-        self.encB(2)
+        self.encB(5)
 
 
 
