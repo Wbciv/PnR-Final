@@ -31,7 +31,7 @@ class GoPiggy(pigo.Pigo):
         # let's use an event-driven model, make a handler of sorts to listen for "events"
         while True:
             self.stop()
-            self.menu()1
+            self.menu()
 
 
     ########################
