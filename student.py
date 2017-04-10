@@ -128,7 +128,7 @@ class GoPiggy(pigo.Pigo):
                 self.encL(8)
             elif answer == "right":
                 self.encR(8)
-            self.restore_heading()
+
 
     def encR(self, enc):
         pigo.Pigo.encR(self,enc)
