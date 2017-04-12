@@ -61,7 +61,7 @@ class GoPiggy(pigo.Pigo):
         menu.get(ans, [None, error])[1]()
 
     def sweep(self):
-        for x in range (20,160,2):
+        for x in range (20,160,4):
                 self.servo(x)
                 if self.dist() < 20:
                     print("AAAHHHHH")
