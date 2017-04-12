@@ -20,7 +20,7 @@ class GoPiggy(pigo.Pigo):
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
         self.STOP_DIST = 45
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.LEFT_SPEED = 47
+        self.LEFT_SPEED = 57
         # YOU DECIDE: What left motor power helps straighten your fwd()?
         self.RIGHT_SPEED = 60
         # This one isn't capitalized because it changes during runtime, the others don't
@@ -63,7 +63,7 @@ class GoPiggy(pigo.Pigo):
     def sweep(self):
         for x in range (20,160,2):
                 self.servo(x)
-                if self.dist() < 43:
+                if self.dist() < 35:
                     print("AAAHHHHH")
                     break
 
