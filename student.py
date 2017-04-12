@@ -142,6 +142,7 @@ class GoPiggy(pigo.Pigo):
     ######## Final Start up ###
     def cruise(self):
         self.fwd()#####need to add to pigo?
+        self.sweep()
         while self.dist()> self.STOP_DIST:
             time.sleep(.01)
         self.stop()
