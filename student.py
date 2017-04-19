@@ -146,7 +146,7 @@ class GoPiggy(pigo.Pigo):
         while self.dist()> self.STOP_DIST:
             time.sleep(.01)
         self.stop()
-        self.encB(1)
+        self.encB(5)
 
 
 
