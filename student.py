@@ -27,6 +27,7 @@ class GoPiggy(pigo.Pigo):
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
         self.scan = [None] * 180
+        self.stoped_at = 0
         self.set_speed(self.LEFT_SPEED, self.RIGHT_SPEED)
         # let's use an event-driven model, make a handler of sorts to listen for "events"
         while True:
@@ -146,6 +147,10 @@ class GoPiggy(pigo.Pigo):
         while self.dist()> self.STOP_DIST:
             time.sleep(.01)
         self.stop()
+        if self.stoped_at < self.MIDPOINT:
+            self.encR(2)
+        else:
+            self.encL(2)
         self.encB(5)
 
 
