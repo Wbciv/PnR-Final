@@ -115,6 +115,8 @@ class GoPiggy(pigo.Pigo):
     ### (kind of a big deal)
     ########################
 
+    ############ NAV Section #############
+
     def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
@@ -126,7 +128,7 @@ class GoPiggy(pigo.Pigo):
             #### need to creat! ######
             answer = self.choose_path()
             if answer == "left":
-                self.encL(8)
+                self.encL(4)
             elif answer == "right":
                 self.encR(4)
 
@@ -140,9 +142,9 @@ class GoPiggy(pigo.Pigo):
         pigo.Pigo.encL(self, enc)
         self.turn_track -= enc
 
-    ######## Final Start up ###
+    ######## Cruise  ##########
     def cruise(self):
-        self.fwd()#####need to add to pigo?
+        self.fwd()
         self.sweep()
         while self.dist()> self.STOP_DIST:
             time.sleep(.01)
