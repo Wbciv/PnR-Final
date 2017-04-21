@@ -66,6 +66,7 @@ class GoPiggy(pigo.Pigo):
                 self.servo(x)
                 if self.dist() < 20:
                     print("AAAHHHHH")
+                    self.stop()
                     break
 
     ###########Turn Test########
