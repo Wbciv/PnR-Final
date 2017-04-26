@@ -27,7 +27,7 @@ class GoPiggy(pigo.Pigo):
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
         self.scan = [None] * 180
-        self.stoped_at = 0
+        self.stopped_at = 0
         self.set_speed(self.LEFT_SPEED, self.RIGHT_SPEED)
         # let's use an event-driven model, make a handler of sorts to listen for "events"
         while True:
@@ -61,12 +61,14 @@ class GoPiggy(pigo.Pigo):
         # activate the item selected
         menu.get(ans, [None, error])[1]()
 
+    ################## Sweep method ###########################
     def sweep(self):
         for x in range (20,160,6):
                 self.servo(x)
                 if self.dist() < 20:
                     print("AAAHHHHH")
                     self.stop()
+                    self.stopped_at = x
                     break
 
     ###########Turn Test########
@@ -94,6 +96,7 @@ class GoPiggy(pigo.Pigo):
             self.encR(val)
 
     #YOU DECIDE: How does your GoPiggy dance?
+    ##################### DANCE ##########################
     def dance(self):
         print("Piggy dance")
         self.help()
@@ -154,6 +157,7 @@ class GoPiggy(pigo.Pigo):
             self.encR(3)
         else:
             self.encL(3)
+        ######## Is this needed?############
         self.encB(5)
 
 
