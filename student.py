@@ -153,7 +153,7 @@ class GoPiggy(pigo.Pigo):
         while self.dist()> self.STOP_DIST:
             time.sleep(.01)
         self.stop()
-        if self.stoped_at < self.MIDPOINT:
+        if self.stopped_at < self.MIDPOINT:
             self.encR(3)
         else:
             self.encL(3)
