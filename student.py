@@ -154,9 +154,9 @@ class GoPiggy(pigo.Pigo):
             time.sleep(.01)
         self.stop()
         if self.stopped_at < self.MIDPOINT:
-            self.encR(3)
+            self.encR(4)
         else:
-            self.encL(3)
+            self.encL(4)
         ######## Is this needed?############
         self.encB(5)
 
