@@ -18,7 +18,7 @@ class GoPiggy(pigo.Pigo):
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
         self.MIDPOINT = 90
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
-        self.STOP_DIST = 45
+        self.STOP_DIST = 40
         # YOU DECIDE: What left motor power helps straighten your fwd()?
         self.LEFT_SPEED = 90
         # YOU DECIDE: What left motor power helps straighten your fwd()?
@@ -63,7 +63,7 @@ class GoPiggy(pigo.Pigo):
 
     ################## Sweep method ###########################
     def sweep(self):
-        for x in range (20,160,6):
+        for x in range (20,160,10):
                 self.servo(x)
                 if self.dist() < 20:
                     print("AAAHHHHH")
@@ -154,9 +154,9 @@ class GoPiggy(pigo.Pigo):
             time.sleep(.01)
         self.stop()
         if self.stopped_at > self.MIDPOINT:
-            self.encR(4)
+            self.encR(5)
         else:
-            self.encL(4)
+            self.encL(5)
         ######## Is this needed?############
         self.encB(5)
 
