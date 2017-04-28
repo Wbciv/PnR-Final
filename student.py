@@ -150,8 +150,8 @@ class GoPiggy(pigo.Pigo):
     def cruise(self):
         self.fwd()
         self.sweep()
-        while self.dist()> self.STOP_DIST:
-            time.sleep(.01)
+        ####while self.dist()> self.STOP_DIST:
+            ###time.sleep(.01)
         self.stop()
         if self.stopped_at > self.MIDPOINT:
             self.encR(5)
@@ -160,7 +160,7 @@ class GoPiggy(pigo.Pigo):
 
         if self.stopped_at == self.MIDPOINT
             self.encB(6)
-            self.is_clear()
+            ####self.is_clear()
         ######## Is this needed?############
             ######self.encB(5)
 
