@@ -158,7 +158,7 @@ class GoPiggy(pigo.Pigo):
         else:
             self.encL(5)
         ######## Is this needed?############
-        self.encB(5)
+    self.encB(5)
 
 
 
