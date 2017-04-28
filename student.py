@@ -158,7 +158,7 @@ class GoPiggy(pigo.Pigo):
         elif self.stopped_at < self.MIDPOINT:
              self.encL(5)
 
-        if self.stopped_at == self.MIDPOINT
+        elif self.stopped_at == self.MIDPOINT
             self.encB(6)
             ####self.is_clear()
         ######## Is this needed?############
