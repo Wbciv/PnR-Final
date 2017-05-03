@@ -85,7 +85,8 @@ class GoPiggy(pigo.Pigo):
             else:
                 break
         self.restore_heading()
-
+    ############################ Restore Heading ##############################
+    ######################Will turn around and go back the way it came#######################
     def restore_heading(self):
         print("Now I'll turn back to the starting postion.")
         if self.turn_track > 0:
@@ -95,12 +96,12 @@ class GoPiggy(pigo.Pigo):
             val = abs(self.turn_track)
             self.encR(val)
 
-    #YOU DECIDE: How does your GoPiggy dance?
     ##################### DANCE ##########################
     def dance(self):
         print("Piggy dance")
         self.help()
 
+    ################### The Honky Dance ########################
 
     def help(self):
         print("help")
@@ -120,7 +121,7 @@ class GoPiggy(pigo.Pigo):
     ########################
 
     ############ NAV Section #############
-
+    ##################### How it moves by its self###################################
     def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
@@ -129,7 +130,7 @@ class GoPiggy(pigo.Pigo):
         while True:
             if self.is_clear():
                 self.cruise()
-            #### need to creat! ######
+
             answer = self.choose_path()
             if answer == "left":
                 self.encL(4)
@@ -161,7 +162,7 @@ class GoPiggy(pigo.Pigo):
         elif self.stopped_at == self.MIDPOINT:
             self.encB(4)
             ####self.is_clear()
-        ######## Is this needed?############
+        ######## Is this needed? Not need leaving as Brainstorm ############
             ######self.encB(5)
 
 
